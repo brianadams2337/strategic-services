@@ -8,8 +8,6 @@ var locationPort = location.port ? ':' + location.port : '';
 var locationPathname = location.pathname;
 var localPathToSDK = "/strategic-services/clinique/bvSDKFramework";
 
-console.log(locationProtocol, locationHostName, locationPort, locationPathname);
-
 // check if jquery does not exist or does not match version
 if (typeof jQuery == 'undefined' || !(($.fn.jquery) == jqueryVersion)) {
 	var otherJSLibrary;

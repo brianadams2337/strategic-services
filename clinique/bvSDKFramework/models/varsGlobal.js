@@ -10,7 +10,6 @@ var apiDefaults = {
 	"stagURL": "stg.api.bazaarvoice.com/",
 	"prodURL": "api.bazaarvoice.com/",
 	"customerName": "clinique",
-	// "customerName": "bvpstemplates.ugc",
 	"format": "json",
 	"locale": bvConfigSDK["locale"] || "en_US",
 	"apiVersion": "5.4",
@@ -30,7 +29,7 @@ var apiDefaults = {
 // true = production
 // false = staging
 
-var bvProduction = true;
+var bvProduction = bvConfigSDK["production"] || false;
 
 
 
