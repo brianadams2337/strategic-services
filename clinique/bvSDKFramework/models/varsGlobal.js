@@ -22,16 +22,8 @@ var apiDefaults = {
 	"limitAnswers": 2,
 	"limitStories": 10,
 	"limitStoryComments": 2,
-	"page": 1
 };
 
-var bvUserDefaults = {
-	"bvUAS": typeof userToken != 'undefined' ? userToken : "", // encoded user string, or userToken if set
-	// "userId": "testuser",
-	// "userEmail":"bvspambox@gmail.com", //User's email address
-	// "userLocation":null, //User location text
-	// "userNickname":"testuser", //User nickname display text
-};
 
 
 /***** SET SITE TO PRODUCTION *****/
@@ -68,30 +60,7 @@ var defaultToggleOptions = {
 	queue: true
 };
 
-/***** INLINE VALIDATION OPTIONS *****/
-var bvClassRequired = "BVRequired";
-var bvClassSuccess = "BVSuccess";
-var bvClassError = "BVError";
 
-
-var defaultInlineValidationOption = {
-	successClass: bvClassSuccess,
-	errorClass: bvClassError,
-	messages: {
-		"required":"This is a required field.",
-		"alphanum":"You may not enter spaces or special characters, numbers and letters only.",
-	},
-	errors: {
-		container: function (elem, isRadioOrCheckbox) {
-			return $(elem).closest(".BVField");
-		},
-		classHandler: function (elem, isRadioOrCheckbox) {
-			return $(elem).closest(".BVField");
-		},
-		errorsWrapper:"<div class='BVErrorContainerInline'></div>",
-		errorElem:"<div class='BVErrorInline'></div>",
-	}
-};
 
 /***** DECIMAL TRUNCATION OPTIONS *****/
 var defaultDecimalOptions = {
@@ -102,24 +71,5 @@ var defaultDecimalOptions = {
 	"overallRange": 0,
 	"secondaryRange": 0
 };
-
-
-/***** GLOBAL CONFIG *****/
-var bvUndoHelpfulnessAllowed = false; // MAKE SURE THE CONFIG ALLOWS THIS BEFORE SWITCHING TO TRUE!
-
-var bvHostedAuth = false;
-
-var bvDateFormat = "MMMM dd, yyyy";
-switch (apiDefaults["locale"]) {
-	case "en_US": 
-		bvDateFormat = "MMMM dd, yyyy";
-		break;
-
-	default:
-		bvDateFormat = "MMMM dd, yyyy";
-		consoleLogFallback("no locale");
-		break;
-
-}
 
 

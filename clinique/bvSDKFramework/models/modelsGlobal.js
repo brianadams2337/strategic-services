@@ -68,24 +68,4 @@ function defaultAjaxErrorFunction (content) {
 	consoleLogFallback(content);
 }
 
-/***** UAS PARAMETERS *****/
-
-function parseUAS (UAS) {
-	var encodedString = UAS.substring(32); //Assumes MD5 hash is 32 digits and strips it from UAS
-	var str = '';
-	for (var i = 0; i < encodedString.length; i += 2) { //converts hex values to ascii
-        str += String.fromCharCode(parseInt(encodedString.substr(i, 2), 16));
-    }
-    var params = {};
-    $.each(str.split("&"), function(){ //converts decoded string to javascript object
-    	var param = this.split("=");
-    	if (param.length > 1) {
-    		params[param[0]] = param[1];
-    	}
-    });
-    return params;
-}
-
-// parsed UAS object
-var userParams = parseUAS(bvUserDefaults['bvUAS']);
 

@@ -1,9 +1,6 @@
-// window.onload = function bvInit (productId, pageType, displayCode, locale, ) {
-// 	// body...
-// }
 
 // version of jquery being used by SDK - if changed, make sure local file is updated for fallbacks
-var jqueryVersion = "1.10.2";
+var jqueryVersion = "1.11.0";
 
 var locationProtocol = location.protocol + "//";
 var locationHostName = location.hostname;
@@ -111,9 +108,6 @@ function bvLoadSDK () {
 				$.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
 				$.getScript(siteBaseURL + "controllers/controllersReviews.js"),
 
-				// plugins
-				$.getScript(siteBaseURL + "js/plugins/jquery.dateFormat.js"),
-
 				// css files
 				$("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
 				$.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
@@ -155,11 +149,11 @@ function bvLoadSDK () {
 									"Parameters":{
 										"limit":"2",
 										"filter":{
-											"rating":"4,5",
-											"isratingsonly":"false",
+											"rating":"4,5", // only get 4 and 5 star reviews to ensure positive UGC
+											"isratingsonly":"false", // set to false to ensure UGC has content
 										},
 										"sort":{
-											"totalpositivefeedbackcount": "desc",
+											"totalpositivefeedbackcount": "desc", // get most helpful UGC to ensure quality UGC content
 										},
 									}
 								});
@@ -168,10 +162,10 @@ function bvLoadSDK () {
 						}, {
 							// api parameters
 							"Parameters":{
-								"attributes":"moderatorcodes,moderatorhighlights",
+								"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
 								"limit":"2",
 								"filter":{
-									"moderatorcode":"mc",
+									"moderatorcode":"mc", // only get UGC tagged with moderator highlights
 								},
 							}
 						});
