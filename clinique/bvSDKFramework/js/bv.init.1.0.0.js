@@ -116,7 +116,7 @@ function bvLoadSDK () {
 				switch (bvConfigSDK["pageType"]) {
 					case "Product":
 						// reviews
-						getAllReviews (bvConfigSDK["productId"], bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"], function(content, modelLocalDefaultSettings) {
+						getAllReviews (bvConfigSDK["productId"], bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"], function(content) {
 							// check to make sure at least 2 pieces of UGC exist
 							if (content["Results"].length >= 2) {
 								// callback functions
@@ -126,13 +126,13 @@ function bvLoadSDK () {
 								});
 							} else {
 								// if not enough moderated highlight UGC (at least 2), then find fallback UGC to use
-								getAllReviews (bvConfigSDK["productId"], bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"], function(content2, modelLocalDefaultSettings) {
-									// concatenate UGC results
-									content2["Results"] = content["Results"].concat(content2["Results"]);
-									// slice UGC results to 2
-									content2["Results"] = content2["Results"].slice(0,2);
+								getAllReviews (bvConfigSDK["productId"], bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"], function(contentFallback) {
+									// concatenate original UGC results with fallback UFC results
+									content["Results"] = content["Results"].concat(contentFallback["Results"]);
+									// slice concatenated UGC results to 2
+									content["Results"] = content["Results"].slice(0,2);
 									// final UGC results to load - concatenated and sliced
-									var ugcToLoad = content2["Results"];
+									var ugcToLoad = content["Results"];
 									// check to make sure UGC exist
 									if (ugcToLoad != "" && ugcToLoad != null && ugcToLoad != undefined && !$.isEmptyObject(ugcToLoad)) {
 										// callback functions

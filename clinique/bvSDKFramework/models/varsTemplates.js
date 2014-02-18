@@ -7,8 +7,7 @@ var bvView = {
 	"header" : {
 
 		"universal" : {
-			"page" : "#bvtemplate-header-page-universal",
-			"section" : "#bvtemplate-header-section-universal",
+			"section" : "#bvtemplate-header-section-universal", // section header template
 		},
 
 	},
@@ -18,7 +17,7 @@ var bvView = {
 	"overlay" : {
 
 		"universal" : {
-			"default" : "#bvtemplate-overlay-loading-default-universal",
+			"default" : "#bvtemplate-overlay-loading-default-universal", // loading overlay template
 		},
 	},
 
@@ -27,8 +26,8 @@ var bvView = {
 	"ugc" : {
 		
 		"universal" : {
-			"container-pullquote-widget" : "#bvtemplate-pullquote-widget-universal",
-			"container-individual" : "#bvtemplate-pullquote-individual-universal",
+			"container-pullquote-widget" : "#bvtemplate-pullquote-widget-universal", // entire pullquote widget template
+			"container-individual" : "#bvtemplate-pullquote-individual-universal", // individual pullquote template
 
 			"container-widget" : "#bvtemplate-widget-universal", // entire ugc widget
 			"container-widget-nocontent" : "#bvtemplate-widget-nocontent-universal", // entire ugc widget with no content

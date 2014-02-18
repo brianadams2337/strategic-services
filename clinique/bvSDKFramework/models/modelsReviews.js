@@ -6,7 +6,7 @@ function getAllReviews (productID, container, callBack, options) {
 			"filteredstats":"reviews",
 			"filter":{
 				"productid":productID,
-			}
+			},
 		}
 	}, options);
 	var apiCall = reviewsAPICall(settings);
@@ -119,7 +119,7 @@ function reviewsAPICall (options) {
 			},
 			"sort_[TYPE]":null, // Sorting option for nested content. Sort order is required (asc or desc). TYPE can be any nested content. i.e. Comments for Reviews.
 			"filteredstats":null,
-			"stats":null // The type of statistics that will be calculated on included subjects. Available content types are: Reviews, Questions, Answers, Stories. Note: Not all statistical content types apply to every possible include.
+			"stats":null, // The type of statistics that will be calculated on included subjects. Available content types are: Reviews, Questions, Answers, Stories. Note: Not all statistical content types apply to every possible include.
 		}
 	}, options);
 

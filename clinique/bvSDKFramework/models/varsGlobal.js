@@ -13,7 +13,7 @@ var apiDefaults = {
 	"format": "json",
 	"locale": bvConfigSDK["locale"] || "en_US",
 	"apiVersion": "5.4",
-	"passkey": "2q5a7l2d368m1t25qnprqpxrl",
+	"passkey": "2q5a7l2d368m1t25qnprqpxrl", // production key
 	"offset": 0,
 	"limitReviews": 10,
 	"limitReviewComments": 2,
@@ -26,8 +26,8 @@ var apiDefaults = {
 
 
 /***** SET SITE TO PRODUCTION *****/
-// true = production
-// false = staging
+// true -> production
+// false -> staging
 
 var bvProduction = bvConfigSDK["production"] || false;
 
@@ -56,7 +56,7 @@ var defaultAnimationSpeed = 300; // milliseconds
 var defaultToggleOptions = {
 	duration: defaultAnimationSpeed,
 	easing: "swing",
-	queue: true
+	queue: true,
 };
 
 
@@ -68,7 +68,7 @@ var defaultDecimalOptions = {
 	"overall": 1,
 	"secondary": 1,
 	"overallRange": 0,
-	"secondaryRange": 0
+	"secondaryRange": 0,
 };
 
 

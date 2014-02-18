@@ -7,7 +7,7 @@ var bvProperties = {
 	"error" : {
 
 		"universal" : {
-			"ugc-nocontent" : "Sorry. There is no content to display with the given specifications.",
+			"ugc-nocontent" : "Sorry. There was an error retrieving content.",
 		},
 
 	},
@@ -18,7 +18,7 @@ var bvProperties = {
 
 		"universal" : {
 			"section-ugc" : "Review Highlights",
-			"section-ugc-nocontent" : "There is no content.",
+			"section-ugc-nocontent" : "There are no highlights for this product.",
 		},
 
 	},

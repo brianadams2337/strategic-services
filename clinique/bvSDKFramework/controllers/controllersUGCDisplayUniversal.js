@@ -2,7 +2,7 @@
 
 function loadUGCPullquote (content, options) {
 	var settings = $.extend(true, {
-		"parentContainer":"", // template must be defined in call
+		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["pullquote"],
 		"viewContainer":bvView["ugc"]["universal"]["pullquote"],
 	}, options);
@@ -22,7 +22,7 @@ function loadUGCPullquote (content, options) {
 
 function loadUGCUserNickname (content, options) {
 	var settings = $.extend(true, {
-		"parentContainer":"", // template must be defined in call
+		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["nickname"],
 		"viewContainer":bvView["ugc"]["universal"]["nickname"],
 	}, options);
@@ -39,7 +39,7 @@ function loadUGCUserNickname (content, options) {
 
 function loadUGCUserLocation (content, options) {
 	var settings = $.extend(true, {
-		"parentContainer":"", // template must be defined in call
+		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["location"],
 		"viewContainer":bvView["ugc"]["universal"]["location"],
 	}, options);
@@ -59,7 +59,7 @@ function loadUGCUserLocation (content, options) {
 // section headers
 function loadSectionHeader (content, options) {
 	var settings = $.extend(true, {
-		"parentContainer":"",
+		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["header"]["universal"]["section"],
 		"viewContainer":bvView["header"]["universal"]["section"],
 		"loadOrder":"",

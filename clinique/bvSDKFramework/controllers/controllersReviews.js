@@ -2,7 +2,7 @@
 
 function loadPullquoteWidget (content, options) {
 	var settings = $.extend(true, {
-		"parentContainer" :"body", // container must be defined in call
+		"parentContainer":"body", // container ($template) must be defined in call or default is page body
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"],
 		"viewContainer":bvView["ugc"]["universal"]["container-pullquote-widget"],
 		"loadOrder":"",
@@ -10,12 +10,6 @@ function loadPullquoteWidget (content, options) {
 	}, options);
 	// set content
 	var bvContent = {};
-	var ugcStatisticsToLoad;
-	if (content["Includes"]["Products"]) {
-		if (content["Includes"]["Products"][settings["productId"]]) {
-			ugcStatisticsToLoad = content["Includes"]["Products"][settings["productId"]]['FilteredReviewStatistics'] || content["Includes"]["Products"][settings["productId"]]['ReviewStatistics']; // review stats
-		}
-	}
 	var ugcToLoad = content["Results"]; // reviews
 	// set container & template
 	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
@@ -94,7 +88,7 @@ function loadIndividualReview (content, options) {
 
 function loadReviewRating (content, options) {
 	var settings = $.extend(true, {
-		"parentContainer":"", // template must be defined in call
+		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["review"]["rating-overall"],
 		"viewContainer":bvView["ugc"]["review"]["rating-overall"],
 	}, options);
