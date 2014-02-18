@@ -1,0 +1,110 @@
+<div id="bvtemplates">
+
+
+<!-- **************************************** HEADERS **************************************** -->
+
+
+<!-- universal page header template -->
+<script id="bvtemplate-header-page-universal" type="html">
+	<h1 class="BVPageHeaderText" data-bv-content="['header-page']"></h1>
+</script>
+
+<!-- universal section header template -->
+<script id="bvtemplate-header-section-universal" type="html">
+	<h2 class="BVSectionHeaderText" data-bv-content="['header-section']"></h2>
+</script>
+
+
+<!-- **************************************** UGC **************************************** -->
+
+
+<!-- universal pullquote template -->
+<script id="bvtemplate-pullquote-universal" type="html">
+	<span class="BVPullquotePrefix" data-bv-property="['ugc']['universal']['pullquote-prefix']"></span>
+	<h3 class="BVPullquote BVPullquoteText" data-bv-content="['pullquote']"></h3>
+	<span class="BVPullquoteSuffix" data-bv-property="['ugc']['universal']['pullquote-suffix']"></span>
+</script>
+
+<!-- *** user info *** -->
+
+<!-- universal nickname template -->
+<script id="bvtemplate-nickname-universal" type="html">
+	<span class="BVUserNicknamePrefix" data-bv-property="['ugc']['universal']['nickname-prefix']"></span>
+	<span class="BVUserNicknameText" data-bv-content="['nickname']"></span>
+	<span class="BVUserNicknameSuffix" data-bv-property="['ugc']['universal']['nickname-suffix']"></span>
+</script>
+
+<!-- universal location template -->
+<script id="bvtemplate-location-universal" type="html">
+	<span class="BVUserLocationPrefix" data-bv-property="['ugc']['universal']['location-prefix']"></span>
+	<span class="BVUserLocationText"  data-bv-content="['location']"></span>
+	<span class="BVUserLocationSuffix" data-bv-property="['ugc']['universal']['location-suffix']"></span>
+</script>
+
+<!-- *** overall *** -->
+
+<!-- review overall rating template -->
+<script id="bvtemplate-rating-overall-review" type="html">
+	<div class="BVOverallRatingWrapper">
+		<div class="BVRatingStarsContainer" data-bv-container="rating-star">
+			<div class="BVRatingStarsFilled" data-bv-container="rating-star-filled"><img class="BVRatingStarsFilledImage" src="" data-img-url="images/filled.svg" data-bv-container="rating-star-image-filled" /></div>
+			<div class="BVRatingStarsUnfilled" data-bv-container="rating-star-unfilled"><img class="BVRatingStarsUnfilledImage" src="" data-img-url="images/unfilled.svg" data-bv-container="rating-star-image-unfilled" /></div>
+		</div>
+	</div>
+</script>
+
+
+<!-- **************************************** INDIVIDUAL CONTAINERS **************************************** -->
+
+
+<!-- moderator highlight individual template -->
+<script id="bvtemplate-pullquote-individual-universal" type="html">
+	<article id="" class="BVUGCContainer">
+		<div class="BVUGCHeader">
+			<div class="BVOverallRatingContainer" data-bv-target='ugc-rating-overall-review'></div>
+			<div class="BVPullquoteContainer" data-bv-target='ugc-pullquote-universal'></div>
+		</div>
+		<div class="BVUserDataContainer">
+			<div class="BVUserInfo">
+				<div class="BVUserNicknameContainer" data-bv-target='ugc-nickname-universal'></div>
+				<div class="BVUserLocationContainer" data-bv-target='ugc-location-universal'></div>
+			</div>
+		</div>
+	</article>
+</script>
+
+
+<!-- **************************************** WIDGETS **************************************** -->
+
+
+<!-- moderator highlight widget template -->
+<script id="bvtemplate-pullquote-widget-universal" type="html">
+	<div class="BVPullquoteWidgetContainer">
+		<div class="BVPageHeaderContainer" data-bv-target='header-section-universal'></div>
+		<div class="BVUGCBodyContainer" data-bv-target='ugc-container-group-universal'></div>
+	</div>
+</script>
+
+<!-- moderator highlight widget no content template -->
+<script id="bvtemplate-pullquote-widget-nocontent-universal" type="html">
+	<div class="BVPullquoteWidgetContainer">
+		<div class="BVPageHeaderContainer" data-bv-target='header-section-universal'></div>
+	</div>
+</script>
+
+
+<!-- **************************************** MISCELLANEOUS **************************************** -->
+
+
+<!-- universal laoding overlay template -->
+<script id="bvtemplate-overlay-loading-default-universal" type="html">
+	<div class="BVOverlayLoadingContainer">
+		<img src="" data-img-url="images/bvLoading.gif" alt="" border="0" />
+		<div class="BVLoadingText" data-bv-property="['overlay']['universal']['loading']"></div>
+	</div>
+</script>
+
+
+
+
+

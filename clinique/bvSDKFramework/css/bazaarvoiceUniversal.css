@@ -1,0 +1,59 @@
+/* CONTAINER STYLES */
+
+	/* Loading Graphic */
+	.BVContentLoadingContainer {background: url(../images/bvLoading.gif) no-repeat center transparent !important; min-height: 50px;}
+	.BVOverlayLoadingContainer {background: rgba(255,255,255,0.9) !important; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+	.BVOverlayLoadingContainer img {display: block; margin: 25px auto 0;}
+	.BVOverlayLoadingContainer .BVLoadingText {display: block; margin: 10px auto 0; text-align: center;}
+
+
+
+/* GENERAL */
+
+	/* Font Styles */
+	.BVUGCContainer {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.5em;}
+
+	/* Titles, Labels, Values */
+	.BVLabel {font-weight: bold;}
+	.BVValue {}
+
+
+
+/* RATINGS */
+
+	/* Overall Star Rating */
+	.BVOverallRatingContainer .BVRatingStarsContainer {min-width: 100px; height: auto; display: inline-block; vertical-align: middle;}
+
+
+/* GENERAL UGC STYLES */
+
+	/* Header - Rating, Pullquote */
+	.BVUGCHeader {margin: 0;}
+
+		/* Overall Rating */
+		.BVUGCHeader .BVOverallRatingContainer {}
+			.BVUGCHeader .BVRatingStarsContainer {width: 40%; min-width: 80px; max-width: 300px; display: inline-block; vertical-align: middle;}
+		
+	
+	/* User Information - Avatar, Nickname, Location, Context Data, Badges */
+	.BVUserDataContainer {}
+		
+		/* Nickname, Location, Context Data */
+		.BVUserInfo {color: #7f8c8d; display: inline-block; vertical-align: middle;}
+			.BVUserNicknameContainer, .BVUserLocationContainer {}
+			.BVUserNicknameText, .BVUserLocationText {font-weight: bold;}
+
+
+
+/* UGC */
+
+	/* UGC Display */
+	.BVUGCBodyContainer {}
+		.BVUGCContainer {width: 39%; margin: 0 5%; display: inline-block; vertical-align: top;}
+
+
+
+/* PULLQUOTES */
+	.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
+	.BVPullquoteText, .BVPullquoteSuffix {display: inline;}
+
