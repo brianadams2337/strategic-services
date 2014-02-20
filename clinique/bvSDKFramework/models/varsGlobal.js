@@ -11,9 +11,9 @@ var apiDefaults = {
 	"prodURL": "api.bazaarvoice.com/",
 	"customerName": "clinique",
 	"format": "json",
-	"locale": bvConfigSDK["locale"] || "en_US",
+	"locale": (bvConfigSDK["region"]) ? bvConfigSDK["language"] + "_" + bvConfigSDK["region"] : bvConfigSDK["language"] || "en_US",
 	"apiVersion": "5.4",
-	"passkey": "2q5a7l2d368m1t25qnprqpxrl", // production key
+	"passkey": bvConfigSDK["passkey"] || "2q5a7l2d368m1t25qnprqpxrl", // production key
 	"offset": 0,
 	"limitReviews": 10,
 	"limitReviewComments": 2,

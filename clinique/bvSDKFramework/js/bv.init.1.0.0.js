@@ -91,8 +91,18 @@ function bvLoadSDK () {
 	).done(function(){
 		// load models (controllers depend on them)
 		$.when(
-			// properties - by locale
-			$.getScript(siteBaseURL + "models/properties/" + apiDefaults["locale"] + "/properties.js"),
+			// properties
+			$.when(
+				// load language defaults first
+				$.getScript(siteBaseURL + "models/properties/" + bvConfigSDK["language"] + "/properties.js")
+			).done(function(){
+				// load region specific overrides
+				if (bvConfigSDK["region"]) {
+					$.getScript(siteBaseURL + "models/properties/" + bvConfigSDK["language"] + "/" + bvConfigSDK["region"] + "/properties.js")
+				}		
+			}).fail(function(e){
+				// console.log(e);
+			}),
 			// models
 			$.getScript(siteBaseURL + "models/varsTemplates.js"),
 			$.getScript(siteBaseURL + "models/varsContainers.js"),
