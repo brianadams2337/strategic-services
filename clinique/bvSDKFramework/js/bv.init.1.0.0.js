@@ -11,7 +11,7 @@ var locationProtocol = "https:" + "//";
 var locationHostName = "rawgithub.com";
 var locationPort = location.port ? ':' + location.port : '';
 var locationPathname = location.pathname;
-var localPathToSDK = "/brianadamsdesigns/strategic-services/master/clinique/bvSDKFramework";
+var localPathToSDK = "/brianadamsdesigns/strategic-services/styling-branch/clinique/bvSDKFramework";
 
 // check if jquery does not exist or does not match version
 if (typeof jQuery == 'undefined' || !(($.fn.jquery) == jqueryVersion)) {
