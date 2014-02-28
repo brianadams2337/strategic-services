@@ -124,7 +124,7 @@ function reviewsAPICall (options) {
 	}, options);
 
 	// set URL base for API call
-	var url = "http://" + defaultSettings["URL"]["baseurl"] + "data/" + "reviews." + defaultSettings["URL"]["format"];
+	var url = locationProtocol + defaultSettings["URL"]["baseurl"] + "data/" + "reviews." + defaultSettings["URL"]["format"];
 
 	// set URL parameters for API call
 	var params = returnAPIParameters(defaultSettings["Parameters"]);
