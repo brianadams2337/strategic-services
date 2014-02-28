@@ -2,11 +2,16 @@
 // version of jquery being used by SDK - if changed, make sure local file is updated for fallbacks
 var jqueryVersion = "1.11.0";
 
-var locationProtocol = location.protocol + "//";
-var locationHostName = location.hostname;
+// var locationProtocol = location.protocol + "//";
+// var locationHostName = location.hostname;
+// var locationPort = location.port ? ':' + location.port : '';
+// var locationPathname = location.pathname;
+// var localPathToSDK = "/strategic-services/clinique/bvSDKFramework";
+var locationProtocol = "https:" + "//";
+var locationHostName = "rawgithub.com";
 var locationPort = location.port ? ':' + location.port : '';
 var locationPathname = location.pathname;
-var localPathToSDK = "/strategic-services/clinique/bvSDKFramework";
+var localPathToSDK = "/brianadamsdesigns/strategic-services/master/clinique/bvSDKFramework";
 
 // check if jquery does not exist or does not match version
 if (typeof jQuery == 'undefined' || !(($.fn.jquery) == jqueryVersion)) {
