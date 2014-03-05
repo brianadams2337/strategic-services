@@ -15,6 +15,9 @@
 
 	/* Font Styles */
 	.BVUGCContainer {font-family: 'HelveticaNeueLTStd45Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; font-size: 15px; color: #000; line-height: 1.5em;}
+	.BVPullquotePrefix, .BVPullquoteText, .BVPullquoteSuffix {color: #333; font-size: 22px; font-weight: normal; line-height: 26px;}
+	.BVUserNicknameText {font-size: 22px; font-weight: normal;}
+	.BVUserLocationContainer {font-size: 13px;}
 
 	/* Titles, Labels, Values */
 	.BVLabel {}
@@ -36,19 +39,14 @@
 
 		/* Overall Rating */
 		.BVUGCHeader .BVOverallRatingContainer {}
-			.BVUGCHeader .BVRatingStarsContainer {width: 40%; min-width: 80px; max-width: 300px; display: inline-block; vertical-align: middle;}
+			.BVUGCHeader .BVRatingStarsContainer {width: 40%; min-width: 145px; max-width: 145px; display: inline-block; vertical-align: middle;}
 		
 	
 	/* User Information - Avatar, Nickname, Location, Context Data, Badges */
 	.BVUserDataContainer {}
 		
 		/* Nickname, Location, Context Data */
-		.BVUserInfo {color: #000; display: block; margin-top: 15px;}
-			.BVUserNicknameContainer, .BVUserLocationContainer {}
-			.BVUserNicknameText {font-size: 22px; font-weight: normal;}
-			.BVUserLocationContainer {font-size: 13px;}
-				.BVUserLocationText {font-weight: bold;}
-
+		.BVUserInfo {display: block; margin-top: 15px;}
 
 
 /* UGC */
@@ -58,9 +56,8 @@
 		.BVUGCContainer {width: 42%; margin: 0 36px; display: inline-block; vertical-align: top;}
 
 
-
 /* PULLQUOTES */
 	.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
 	h3.BVPullquoteText {margin: 0;}
-	.BVPullquoteText, .BVPullquoteSuffix {color: #333333; font-size: 22px; font-weight: normal; line-height: 26px; display: inline;}
+	.BVPullquoteText, .BVPullquoteSuffix {display: inline;}
 
