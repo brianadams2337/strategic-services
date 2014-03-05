@@ -82,6 +82,7 @@
 	}
 
 	@media (max-width: 631px) {
+		.BVPullquoteWidgetContainer .BVUGCBodyContainer {background-image: none;}
 		.BVUGCContainer {width: auto; margin: 0 36px 36px;}
 	}
 
