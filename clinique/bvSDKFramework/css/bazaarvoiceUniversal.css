@@ -2,6 +2,7 @@
 
 	#BVRRPullquoteHighlightContainer {clear: both;}
 	.BVPullquoteWidgetContainer {border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB; padding: 18px 0;}
+		.BVPullquoteWidgetContainer .BVUGCBodyContainer {background: url(../images/backgroundPullquoteDivider.gif) repeat-y center center;}
 
 	/* Loading Graphic */
 	.BVContentLoadingContainer {background: url(../images/bvLoading.gif) no-repeat center transparent !important; min-height: 50px;}
@@ -60,4 +61,5 @@
 	.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
 	h3.BVPullquoteText {margin: 0;}
 	.BVPullquoteText, .BVPullquoteSuffix {display: inline;}
+	.BVPullquoteSuffix {margin-left: -4px;}
 
