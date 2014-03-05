@@ -65,27 +65,27 @@
 
 /* RESPONSIVE */
 
-	@media screen and (max-width: 985px) {
+	@media (max-width: 985px) {
 		.BVUGCContainer {width: 40%;}
 	}
 
-	@media screen and (max-width: 801px) {
+	@media (max-width: 801px) {
 		.BVUGCContainer {width: 39%;}
 	}
 
-	@media screen and (max-width: 733px) {
+	@media (max-width: 733px) {
 		.BVUGCContainer {width: 38%;}
 	}
 
-	@media screen and (max-width: 678px) {
+	@media (max-width: 678px) {
 		.BVUGCContainer {width: 37%;}
 	}
 
-	@media screen and (max-width: 631px) {
+	@media (max-width: 631px) {
 		.BVUGCContainer {width: auto; margin: 0 36px 36px;}
 	}
 
-	@media screen and (max-width: 480px) {
+	@media (max-width: 480px) {
 		.BVPullquoteWidgetContainer {padding-bottom: 0;}
 		.BVUGCContainer {margin: 0 16px 30px;}
 	}
