@@ -160,7 +160,7 @@ function bvLoadSDK () {
 								}, {
 									// api parameters
 									"Parameters":{
-										"limit":"0",
+										"limit":"2",
 										"filter":{
 											"rating":"4,5", // only get 4 and 5 star reviews to ensure positive UGC
 											"isratingsonly":"false", // set to false to ensure UGC has content
@@ -176,7 +176,7 @@ function bvLoadSDK () {
 							// api parameters
 							"Parameters":{
 								"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
-								"limit":"1",
+								"limit":"2",
 								"filter":{
 									"moderatorcode":"mc", // only get UGC tagged with moderator highlights
 								},
