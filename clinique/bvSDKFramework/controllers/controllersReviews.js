@@ -33,6 +33,12 @@ function loadPullquoteWidget (content, options) {
 			});
 		});
 
+		if (ugcToLoad.length == 1) {
+			$(settings["targetContainer"]).addClass("BVRRSingleReview");
+		} else if (ugcToLoad.length == 0) {
+			$(settings["targetContainer"]).addClass("BVRRNoReview");
+		}
+
 	} else {
 
 		/***** headers *****/
