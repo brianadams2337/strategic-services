@@ -18,7 +18,7 @@
 /* GENERAL */
 
 	/* Font Styles */
-	.BVUGCContainer {font-family: 'HelveticaNeueLTStd45Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; font-size: 15px; color: #000; line-height: 1.5em;}
+	.BVUGCContainer {font-family: 'HelveticaNeueLTStd45Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; font-size: 15px; color: #333; line-height: 1.5em;}
 	.BVPullquotePrefix, .BVPullquoteText, .BVPullquoteSuffix {color: #333; font-size: 22px; font-weight: normal; line-height: 26px;}
 	.BVUserNicknameText {font-size: 22px; font-weight: normal;}
 	.BVUserLocationContainer {font-size: 13px;}
