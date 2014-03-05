@@ -1,3 +1,7 @@
+/* 	Bazaarvoice Inc. Pullquote Widget
+	rev 03052014 */
+
+
 /* CONTAINER STYLES */
 
 	#BVRRPullquoteHighlightContainer {clear: both;}
@@ -9,7 +13,6 @@
 	.BVOverlayLoadingContainer {background: rgba(255,255,255,0.9) !important; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
 	.BVOverlayLoadingContainer img {display: block; margin: 25px auto 0;}
 	.BVOverlayLoadingContainer .BVLoadingText {display: block; margin: 10px auto 0; text-align: center;}
-
 
 
 /* GENERAL */
@@ -35,12 +38,22 @@
 
 /* GENERAL UGC STYLES */
 
+	/* UGC Display */
+	.BVUGCBodyContainer {}
+		.BVUGCContainer {width: 42%; margin: 0 36px; display: inline-block; vertical-align: top;}
+
 	/* Header - Rating, Pullquote */
 	.BVUGCHeader {margin: 0;}
 
 		/* Overall Rating */
 		.BVUGCHeader .BVOverallRatingContainer {}
 			.BVUGCHeader .BVRatingStarsContainer {width: 40%; min-width: 145px; max-width: 145px; display: inline-block; vertical-align: middle;}
+
+		/* Pull Quote */
+		.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
+		h3.BVPullquoteText {margin: 0;}
+		.BVPullquoteText, .BVPullquoteSuffix {display: inline;}
+		.BVPullquoteSuffix {margin-left: -4px;}
 		
 	
 	/* User Information - Avatar, Nickname, Location, Context Data, Badges */
@@ -50,16 +63,29 @@
 		.BVUserInfo {display: block; margin-top: 15px;}
 
 
-/* UGC */
+/* RESPONSIVE */
 
-	/* UGC Display */
-	.BVUGCBodyContainer {}
-		.BVUGCContainer {width: 42%; margin: 0 36px; display: inline-block; vertical-align: top;}
+	@media screen and (max-width: 985px) {
+		.BVUGCContainer {width: 40%;}
+	}
 
+	@media screen and (max-width: 801px) {
+		.BVUGCContainer {width: 39%;}
+	}
 
-/* PULLQUOTES */
-	.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
-	h3.BVPullquoteText {margin: 0;}
-	.BVPullquoteText, .BVPullquoteSuffix {display: inline;}
-	.BVPullquoteSuffix {margin-left: -4px;}
+	@media screen and (max-width: 733px) {
+		.BVUGCContainer {width: 38%;}
+	}
 
+	@media screen and (max-width: 678px) {
+		.BVUGCContainer {width: 37%;}
+	}
+
+	@media screen and (max-width: 631px) {
+		.BVUGCContainer {width: auto; margin: 0 36px 36px;}
+	}
+
+	@media screen and (max-width: 480px) {
+		.BVPullquoteWidgetContainer {padding-bottom: 0;}
+		.BVUGCContainer {margin: 0 16px 30px;}
+	}
