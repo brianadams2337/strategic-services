@@ -9,7 +9,7 @@ var jqueryVersion = "1.11.0";
 // var localPathToSDK = "/strategic-services/clinique/bvSDKFramework";
 var locationProtocol = "https:" + "//";
 var locationHostName = "rawgithub.com";
-var locationPort = location.port ? ':' + location.port : '';
+var locationPort = location.port ? ':' + location.port : ' ';
 var locationPathname = location.pathname;
 var localPathToSDK = "/brianadamsdesigns/strategic-services/styling-branch/clinique/bvSDKFramework";
 
