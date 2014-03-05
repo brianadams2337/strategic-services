@@ -6,7 +6,8 @@
 	.BVOverlayLoadingContainer img {display: block; margin: 25px auto 0;}
 	.BVOverlayLoadingContainer .BVLoadingText {display: block; margin: 10px auto 0; text-align: center;}
 
-	.BVPullquoteWidgetContainer {width: 960px; margin: 0 auto; border-bottom: 1px solid #DBDBDB; padding-bottom: 15px;}
+	#BVRRPullquoteHighlightContainer {clear: both;}
+	.BVPullquoteWidgetContainer {width: 960px; margin: 0 auto 15px; border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB; padding: 15px 0;}
 
 
 
@@ -60,5 +61,6 @@
 
 /* PULLQUOTES */
 	.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
-	.BVPullquoteText, .BVPullquoteSuffix {font-size: 22px; font-weight: normal; line-height: 26px; display: inline;}
+	h3.BVPullquoteText {margin: 0;}
+	.BVPullquoteText, .BVPullquoteSuffix {color: #333333; font-size: 22px; font-weight: normal; line-height: 26px; display: inline;}
 
