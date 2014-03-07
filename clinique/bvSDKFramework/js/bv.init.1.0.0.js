@@ -151,7 +151,7 @@ function bvLoadSDK () {
 									// check to make sure UGC exist
 									if (ugcToLoad != "" && ugcToLoad != null && ugcToLoad != undefined && !$.isEmptyObject(ugcToLoad)) {
 										// callback functions
-										loadPullquoteWidget (content2, {
+										loadPullquoteWidget (content, {
 											"parentContainer":"body",
 											"productId":bvConfigSDK["productId"],
 										});
@@ -160,10 +160,12 @@ function bvLoadSDK () {
 								}, {
 									// api parameters
 									"Parameters":{
+										"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
 										"limit":"2",
 										"filter":{
 											"rating":"4,5", // only get 4 and 5 star reviews to ensure positive UGC
 											"isratingsonly":"false", // set to false to ensure UGC has content
+											// "hasphoto":"true", // set to false to ensure UGC has content
 										},
 										"sort":{
 											"totalpositivefeedbackcount": "desc", // get most helpful UGC to ensure quality UGC content
@@ -179,6 +181,7 @@ function bvLoadSDK () {
 								"limit":"2",
 								"filter":{
 									"moderatorcode":"mc", // only get UGC tagged with moderator highlights
+									// "hasphoto":"true", // set to false to ensure UGC has content
 								},
 							}
 						});

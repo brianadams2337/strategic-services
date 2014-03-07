@@ -21,13 +21,13 @@ function getAllReviews (productID, container, callBack, options) {
 		success: function(data) {
 			console.log(data, urlString, paramString, paramObject);
 			callBack(data, paramObject);
-			removeLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);
+			// removeLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);
 		},
 		error: function(e) {
 			defaultAjaxErrorFunction(e);
 		},
 		beforeSend: function() {
-			loadLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);
+			// loadLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);
 		}
 	});
 }
