@@ -145,7 +145,7 @@ function bvLoadSDK () {
 									// concatenate original UGC results with fallback UFC results
 									content["Results"] = content["Results"].concat(contentFallback["Results"]);
 									// slice concatenated UGC results to 2
-									content["Results"] = content["Results"].slice(0,2);
+									content["Results"] = content["Results"].slice(0,1);
 									// final UGC results to load - concatenated and sliced
 									var ugcToLoad = content["Results"];
 									// check to make sure UGC exist
