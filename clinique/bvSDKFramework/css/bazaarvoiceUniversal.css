@@ -7,6 +7,7 @@
 	#BVRRPullquoteHighlightContainer {clear: both;}
 	.BVPullquoteWidgetContainer {border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB; padding: 18px 0;}
 		.BVPullquoteWidgetContainer .BVUGCBodyContainer {background: url(../images/backgroundPullquoteDivider.gif) repeat-y center center;}
+	.BVRRSingleReview .BVPullquoteWidgetContainer .BVUGCBodyContainer {background: none; text-align: center;}
 
 	/* Loading Graphic */
 	.BVContentLoadingContainer {background: url(../images/bvLoading.gif) no-repeat center transparent !important; min-height: 50px;}
