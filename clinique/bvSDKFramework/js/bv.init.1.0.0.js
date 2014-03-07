@@ -145,7 +145,7 @@ function bvLoadSDK () {
 									// concatenate original UGC results with fallback UFC results
 									content["Results"] = content["Results"].concat(contentFallback["Results"]);
 									// slice concatenated UGC results to 2
-									content["Results"] = content["Results"].slice(0,1);
+									content["Results"] = content["Results"].slice(0,2);
 									// final UGC results to load - concatenated and sliced
 									var ugcToLoad = content["Results"];
 									// check to make sure UGC exist
@@ -161,7 +161,7 @@ function bvLoadSDK () {
 									// api parameters
 									"Parameters":{
 										"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
-										"limit":"1",
+										"limit":"2",
 										"filter":{
 											"rating":"4,5", // only get 4 and 5 star reviews to ensure positive UGC
 											"isratingsonly":"false", // set to false to ensure UGC has content
@@ -178,7 +178,7 @@ function bvLoadSDK () {
 							// api parameters
 							"Parameters":{
 								"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
-								"limit":"1",
+								"limit":"2",
 								"filter":{
 									"moderatorcode":"mc", // only get UGC tagged with moderator highlights
 									// "hasphoto":"true", // set to false to ensure UGC has content
