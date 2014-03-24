@@ -11,7 +11,7 @@
 
 	/* Loading Graphic */
 	.BVContentLoadingContainer {background: url(../images/bvLoading.gif) no-repeat center transparent !important; min-height: 50px;}
-	.BVOverlayLoadingContainer {background: rgba(255,255,255,0.9) !important; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+	.BVOverlayLoadingContainer {background: rgba(255,255,255,0.9) !important; width: 100%; height: 100%;}
 	.BVOverlayLoadingContainer img {display: block; margin: 25px auto 0;}
 	.BVOverlayLoadingContainer .BVLoadingText {display: block; margin: 10px auto 0; text-align: center;}
 
