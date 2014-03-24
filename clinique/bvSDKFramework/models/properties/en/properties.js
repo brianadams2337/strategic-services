@@ -46,8 +46,8 @@ var bvLocaleProperties = {
 			"nickname-prefix" : "",
 			"nickname-suffix" : "",
 			// pullquote
-			"pullquote-prefix" : "\"",
-			"pullquote-suffix" : "\"",
+			"pullquote-prefix" : "&ldquo;",
+			"pullquote-suffix" : "&rdquo;",
 		},
 
 	},

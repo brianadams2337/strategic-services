@@ -1,4 +1,13 @@
+/* 	Bazaarvoice Inc. Pullquote Widget
+	rev 03052014 */
+
+
 /* CONTAINER STYLES */
+
+	#BVRRPullquoteHighlightContainer {clear: both;}
+	.BVPullquoteWidgetContainer {border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB; padding: 18px 0;}
+		.BVPullquoteWidgetContainer .BVUGCBodyContainer {background: url(../images/backgroundPullquoteDivider.gif) repeat-y center center;}
+	.BVRRSingleReview .BVPullquoteWidgetContainer .BVUGCBodyContainer {background: none; text-align: center;}
 
 	/* Loading Graphic */
 	.BVContentLoadingContainer {background: url(../images/bvLoading.gif) no-repeat center transparent !important; min-height: 50px;}
@@ -7,53 +16,78 @@
 	.BVOverlayLoadingContainer .BVLoadingText {display: block; margin: 10px auto 0; text-align: center;}
 
 
-
 /* GENERAL */
 
 	/* Font Styles */
-	.BVUGCContainer {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.5em;}
+	.BVUGCContainer {font-family: 'HelveticaNeueLTStd45Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; font-size: 15px; color: #333; line-height: 1.5em;}
+	.BVPullquotePrefix, .BVPullquoteText, .BVPullquoteSuffix {color: #333; font-size: 22px; font-weight: normal; line-height: 26px;}
+	.BVUserNicknameText {font-size: 22px; font-weight: normal;}
+	.BVUserLocationContainer {font-size: 13px;}
 
 	/* Titles, Labels, Values */
-	.BVLabel {font-weight: bold;}
-	.BVValue {}
+	.BVLabel {}
+	.BVValue {font-weight: bold;}
 
 
 
 /* RATINGS */
 
 	/* Overall Star Rating */
+	.BVOverallRatingContainer {margin-bottom: 20px;}
 	.BVOverallRatingContainer .BVRatingStarsContainer {min-width: 100px; height: auto; display: inline-block; vertical-align: middle;}
 
 
 /* GENERAL UGC STYLES */
+
+	/* UGC Display */
+	.BVUGCBodyContainer {}
+		.BVUGCContainer {width: 42%; margin: 0 36px; display: inline-block; vertical-align: top;}
 
 	/* Header - Rating, Pullquote */
 	.BVUGCHeader {margin: 0;}
 
 		/* Overall Rating */
 		.BVUGCHeader .BVOverallRatingContainer {}
-			.BVUGCHeader .BVRatingStarsContainer {width: 40%; min-width: 80px; max-width: 300px; display: inline-block; vertical-align: middle;}
+			.BVUGCHeader .BVRatingStarsContainer {width: 40%; min-width: 145px; max-width: 145px; display: inline-block; vertical-align: middle;}
+
+		/* Pull Quote */
+		.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
+		h3.BVPullquoteText {margin: 0;}
+		.BVPullquoteText, .BVPullquoteSuffix {display: inline;}
+		.BVPullquoteSuffix {margin-left: -4px;}
 		
 	
 	/* User Information - Avatar, Nickname, Location, Context Data, Badges */
 	.BVUserDataContainer {}
 		
 		/* Nickname, Location, Context Data */
-		.BVUserInfo {color: #7f8c8d; display: inline-block; vertical-align: middle;}
-			.BVUserNicknameContainer, .BVUserLocationContainer {}
-			.BVUserNicknameText, .BVUserLocationText {font-weight: bold;}
+		.BVUserInfo {display: block; margin-top: 15px;}
 
 
+/* RESPONSIVE */
 
-/* UGC */
+	@media (max-width: 985px) {
+		.BVUGCContainer {width: 40%;}
+	}
 
-	/* UGC Display */
-	.BVUGCBodyContainer {}
-		.BVUGCContainer {width: 39%; margin: 0 5%; display: inline-block; vertical-align: top;}
+	@media (max-width: 801px) {
+		.BVUGCContainer {width: 39%;}
+	}
 
+	@media (max-width: 733px) {
+		.BVUGCContainer {width: 38%;}
+	}
 
+	@media (max-width: 678px) {
+		.BVUGCContainer {width: 37%;}
+	}
 
-/* PULLQUOTES */
-	.BVPullquotePrefix {display: inline-block; vertical-align: top; float: left;}
-	.BVPullquoteText, .BVPullquoteSuffix {display: inline;}
+	@media (max-width: 631px) {
+		.BVPullquoteWidgetContainer .BVUGCBodyContainer {background-image: none;}
+		.BVPullquoteWidgetContainer {padding-bottom: 0;}
+		.BVUGCContainer {width: auto; margin: 0 36px 36px;}
+	}
 
+	@media (max-width: 480px) {
+		.BVUGCContainer {margin: 0 16px 30px;}
+	}
