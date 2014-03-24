@@ -2,16 +2,11 @@
 // version of jquery being used by SDK - if changed, make sure local file is updated for fallbacks
 var jqueryVersion = "1.11.0";
 
-// var locationProtocol = location.protocol + "//";
-// var locationHostName = location.hostname;
-// var locationPort = location.port ? ':' + location.port : '';
-// var locationPathname = location.pathname;
-// var localPathToSDK = "/strategic-services/clinique/bvSDKFramework";
-var locationProtocol = "https:" + "//";
-var locationHostName = "rawgithub.com";
-var locationPort = '';
+var locationProtocol = location.protocol + "//";
+var locationHostName = location.hostname;
+var locationPort = (location.port) ? ":" + location.port : '';
 var locationPathname = location.pathname;
-var localPathToSDK = "/brianadamsdesigns/strategic-services/styling-branch/clinique/bvSDKFramework";
+var localPathToSDK = ("localPathToSDK" in bvConfigSDK) ? bvConfigSDK["localPathToSDK"] : "/bvSDKFramework";
 
 // check if jquery does not exist or does not match version
 if (typeof jQuery == 'undefined' || !(($.fn.jquery) == jqueryVersion)) {
@@ -129,11 +124,26 @@ function bvLoadSDK () {
 			).done(function(){
 				// load reviews
 				switch (bvConfigSDK["pageType"]) {
+
 					case "Product":
-						// reviews
+						// Product Page specific code
+						break;
+					
+					case "Category":
+						// Category Page specific code
+						break;
+					
+					case "Misc":
+						// Misc Page specific code (home page, etc)
+						break;
+
+					default:
+						// Default code
 						getAllReviews (bvConfigSDK["productId"], bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"], function(content) {
 							// check to make sure at least 2 pieces of UGC exist
 							if (content["Results"].length >= 2) {
+								// slice concatenated UGC results to 2
+								content["Results"] = content["Results"].slice(0,2);
 								// callback functions
 								loadPullquoteWidget (content, {
 									"parentContainer":"body",
@@ -161,11 +171,9 @@ function bvLoadSDK () {
 									// api parameters
 									"Parameters":{
 										"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
-										"limit":"2",
 										"filter":{
 											"rating":"4,5", // only get 4 and 5 star reviews to ensure positive UGC
 											"isratingsonly":"false", // set to false to ensure UGC has content
-											// "hasphoto":"true", // set to false to ensure UGC has content
 										},
 										"sort":{
 											"totalpositivefeedbackcount": "desc", // get most helpful UGC to ensure quality UGC content
@@ -178,25 +186,11 @@ function bvLoadSDK () {
 							// api parameters
 							"Parameters":{
 								"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
-								"limit":"2",
 								"filter":{
 									"moderatorcode":"mc", // only get UGC tagged with moderator highlights
-									// "hasphoto":"true", // set to false to ensure UGC has content
 								},
 							}
 						});
-
-						break;
-
-					case "Category":
-
-						break;
-
-					case "Misc":
-
-						break;
-
-					default:
 
 						break;
 

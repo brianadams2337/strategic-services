@@ -15,12 +15,7 @@ var apiDefaults = {
 	"apiVersion": "5.4",
 	"passkey": bvConfigSDK["passkey"] || "2q5a7l2d368m1t25qnprqpxrl", // production key
 	"offset": 0,
-	"limitReviews": 10,
-	"limitReviewComments": 2,
-	"limitQuestions": 10,
-	"limitAnswers": 2,
-	"limitStories": 10,
-	"limitStoryComments": 2,
+	"limitReviews": 2,
 };
 
 
@@ -51,8 +46,11 @@ if (bvProduction) {
 
 
 /***** TOGGLE OPTIONS *****/
+
+// default speed of all jQuery animations (show,hide,etc)
 var defaultAnimationSpeed = 300; // milliseconds
 
+// default toggle options for all jQuery animations (show,hide,etc)
 var defaultToggleOptions = {
 	duration: defaultAnimationSpeed,
 	easing: "swing",
@@ -62,6 +60,8 @@ var defaultToggleOptions = {
 
 
 /***** DECIMAL TRUNCATION OPTIONS *****/
+
+// the amount of decimal places to allow for the review ratings
 var defaultDecimalOptions = {
 	"overallAverage": 1,
 	"secondaryAverage": 1,
