@@ -1,9 +1,9 @@
 /***** CLIENT DEFAULTS *****/
 
 // url path for staging site
-var stagingURL = locationProtocol + locationHostName + locationPort + localPathToSDK + "/";
+var stagingURL = localPathToSDK;
 // url pate for production site
-var productionURL = locationProtocol + locationHostName + locationPort + localPathToSDK + "/";
+var productionURL = localPathToSDK;
 
 // api parameter defaults
 var apiDefaults = {

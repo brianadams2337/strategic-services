@@ -10,12 +10,13 @@
 			"region" : "US",
 			"production" : true,
 			"localPathToSDK" : "http://clinique.com/bvSDKFramework",
-			"localPathToSDK" : "https://rawgithub.com/brianadamsdesigns/strategic-services/master/clinique/bvSDKFramework",
+			"localPathToSDK" : "https://rawgithub.com/brianadamsdesigns/strategic-services/master/clinique/bvSDKFramework/",
+			// "localPathToSDK" : "http://localhost:8888/strategic-services/clinique/bvSDKFramework/",
 		}
 		</script>
 		<!-- creates URL for bv.init file from the bvConfigSDK object -->
 		<script>
-			var src = bvConfigSDK["localPathToSDK"] + "/js/bv.init.1.0.0.js";
+			var src = bvConfigSDK["localPathToSDK"] + "js/bv.init.1.0.0.js";
 			var script = document.createElement('script');
 			script.type = "text/javascript";
 			script.src = src;

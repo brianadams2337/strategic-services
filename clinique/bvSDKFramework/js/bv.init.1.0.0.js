@@ -6,7 +6,7 @@ var locationProtocol = location.protocol + "//";
 var locationHostName = location.hostname;
 var locationPort = (location.port) ? ":" + location.port : '';
 var locationPathname = location.pathname;
-var localPathToSDK = ("localPathToSDK" in bvConfigSDK) ? bvConfigSDK["localPathToSDK"] : "/bvSDKFramework";
+var localPathToSDK = ("localPathToSDK" in bvConfigSDK) ? bvConfigSDK["localPathToSDK"] : "bvSDKFramework/";
 
 // check if jquery does not exist or does not match version
 if (typeof jQuery == 'undefined' || !(($.fn.jquery) == jqueryVersion)) {
@@ -19,7 +19,7 @@ if (typeof jQuery == 'undefined' || !(($.fn.jquery) == jqueryVersion)) {
 	loadScript('http://ajax.googleapis.com/ajax/libs/jquery/' + jqueryVersion + '/jquery.min.js', function() {
 		if (typeof jQuery=='undefined') {
 			// load local file as fallback if jquery did not load successfully from CDN
-			loadScript(locationProtocol + locationHostName + locationPort + localPathToSDK + "/js/jquery.min." + jqueryVersion + ".js", function() {
+			loadScript(localPathToSDK + "js/jquery.min." + jqueryVersion + ".js", function() {
 				bvLoadSDK();
 			})
 		} else {
@@ -85,9 +85,9 @@ function bvLoadSDK () {
 	// load dependant files first
 	$.when(
 		// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
-		$.getScript(locationProtocol + locationHostName + locationPort + localPathToSDK + "/js/modernizr.js"),
+		$.getScript(localPathToSDK + "js/modernizr.js"),
 		// global variables - must load first for bv content
-		$.getScript(locationProtocol + locationHostName + locationPort + localPathToSDK + "/models/varsGlobal.js")
+		$.getScript(localPathToSDK + "models/varsGlobal.js")
 	).done(function(){
 		// load models (controllers depend on them)
 		$.when(
