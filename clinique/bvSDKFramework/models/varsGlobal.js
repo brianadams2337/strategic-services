@@ -13,7 +13,7 @@ var apiDefaults = {
 	"format": "json",
 	"locale": (bvConfigSDK["region"]) ? bvConfigSDK["language"] + "_" + bvConfigSDK["region"] : bvConfigSDK["language"] || "en_US",
 	"apiVersion": "5.4",
-	"passkey": bvConfigSDK["passkey"] || "2q5a7l2d368m1t25qnprqpxrl", // production key
+	"passkey": bvConfigSDK["passkey"] || (bvConfigSDK["production"]) ? "txb49wtroa4y12psz26vpsuis" : "70ns8ffifrckdshwd0lkcpug7",
 	"offset": 0,
 	"limitReviews": 2,
 };

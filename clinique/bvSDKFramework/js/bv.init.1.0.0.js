@@ -94,11 +94,11 @@ function bvLoadSDK () {
 			// properties
 			$.when(
 				// load language defaults first
-				$.getScript(siteBaseURL + "models/properties/" + bvConfigSDK["language"] + "/properties.js")
+				$.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
 			).done(function(){
 				// load region specific overrides
 				if (bvConfigSDK["region"]) {
-					$.getScript(siteBaseURL + "models/properties/" + bvConfigSDK["language"] + "/" + bvConfigSDK["region"] + "/properties.js")
+					$.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
 				}		
 			}).fail(function(e){
 				// console.log(e);
@@ -127,71 +127,22 @@ function bvLoadSDK () {
 
 					case "Product":
 						// Product Page specific code
+						bvInitPullquoteDefault();
 						break;
 					
 					case "Category":
 						// Category Page specific code
+						bvInitPullquoteDefault();
 						break;
 					
 					case "Misc":
 						// Misc Page specific code (home page, etc)
+						bvInitPullquoteDefault();
 						break;
 
 					default:
 						// Default code
-						getAllReviews (bvConfigSDK["productId"], bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"], function(content) {
-							// check to make sure at least 2 pieces of UGC exist
-							if (content["Results"].length >= 2) {
-								// slice concatenated UGC results to 2
-								content["Results"] = content["Results"].slice(0,2);
-								// callback functions
-								loadPullquoteWidget (content, {
-									"parentContainer":"body",
-									"productId":bvConfigSDK["productId"],
-								});
-							} else {
-								// if not enough moderated highlight UGC (at least 2), then find fallback UGC to use
-								getAllReviews (bvConfigSDK["productId"], bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"], function(contentFallback) {
-									// concatenate original UGC results with fallback UFC results
-									content["Results"] = content["Results"].concat(contentFallback["Results"]);
-									// slice concatenated UGC results to 2
-									content["Results"] = content["Results"].slice(0,2);
-									// final UGC results to load - concatenated and sliced
-									var ugcToLoad = content["Results"];
-									// check to make sure UGC exist
-									if (ugcToLoad != "" && ugcToLoad != null && ugcToLoad != undefined && !$.isEmptyObject(ugcToLoad)) {
-										// callback functions
-										loadPullquoteWidget (content, {
-											"parentContainer":"body",
-											"productId":bvConfigSDK["productId"],
-										});
-									}
-
-								}, {
-									// api parameters
-									"Parameters":{
-										"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
-										"filter":{
-											"rating":"4,5", // only get 4 and 5 star reviews to ensure positive UGC
-											"isratingsonly":"false", // set to false to ensure UGC has content
-										},
-										"sort":{
-											"totalpositivefeedbackcount": "desc", // get most helpful UGC to ensure quality UGC content
-										},
-									}
-								});
-							}
-
-						}, {
-							// api parameters
-							"Parameters":{
-								"attributes":"moderatorcodes,moderatorhighlights", // include moderator codes and highlights in response
-								"filter":{
-									"moderatorcode":"mc", // only get UGC tagged with moderator highlights
-								},
-							}
-						});
-
+						bvInitPullquoteDefault();
 						break;
 
 					}
