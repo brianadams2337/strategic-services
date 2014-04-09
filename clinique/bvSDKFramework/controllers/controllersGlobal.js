@@ -106,7 +106,7 @@ function returnTemplate (content, template) {
 		} else {
 			// use original image name
 			$(this).attr("src", pathResource($(this).attr("data-img-url")));
-			$(this).attr("onerror", "var url=this.src.split('.').reverse(); url[0] = 'png'; this.src=url.reverse().join('.')");
+			$(this).attr("onerror", "var url = this.src.split('.').reverse(); url[0] = 'png'; this.src = url.reverse().join('.')");
 		}
 	});
 	// inject bv content into template
