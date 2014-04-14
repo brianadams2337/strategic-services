@@ -90,7 +90,7 @@ function bvLoadSDK () {
 					$bvsdk("body").append(data);
 				})
 			).done(function(){
-				console.log("testtest4");
+				console.log("testtest5");
 				// load reviews
 				switch (bvConfigSDK["pageType"]) {
 

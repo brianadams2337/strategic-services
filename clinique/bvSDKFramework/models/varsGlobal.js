@@ -1,9 +1,9 @@
 /***** CLIENT DEFAULTS *****/
 
 // url path for staging site
-var stagingURL = localPathToSDK;
+var stagingURL = "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/";
 // url pate for production site
-var productionURL = localPathToSDK;
+var productionURL = "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/";
 
 // api parameter defaults
 var apiDefaults = {
