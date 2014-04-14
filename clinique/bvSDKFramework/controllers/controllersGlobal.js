@@ -2,7 +2,7 @@
 
 
 function pathResource (relativeURI) {
-	var path = relativeURI.substr(0,4) == 'http' ? relativeURI : siteBaseURL + relativeURI;
+	var path = relativeURI.substr(0,4) == 'http' ? relativeURI : "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + relativeURI;
 	return path;
 }
 
