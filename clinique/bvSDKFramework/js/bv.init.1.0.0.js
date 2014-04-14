@@ -80,12 +80,12 @@ function bvLoadSDK () {
 			// load controllers, plugins, and css files
 			$bvsdk.when(
 				// controllers
-				$bvsdk.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
-				$bvsdk.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
-				$bvsdk.getScript(siteBaseURL + "controllers/controllersReviews.js"),
+				$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "controllers/controllersGlobal.js"),
+				$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "controllers/controllersUGCDisplayUniversal.js"),
+				$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "controllers/controllersReviews.js"),
 
 				// css files
-				$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
+				$bvsdk("head").append("<link href='" + "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
 				$bvsdk.get("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "views/viewsUniversal.html", function(data) {
 					$bvsdk("body").append(data);
 				})
