@@ -1,6 +1,6 @@
 // gets all reviews with statistics - set productID to null to return all reviews
 function getAllReviews (productID, container, callBack, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"Parameters":{
 			"include":"products",
 			"filteredstats":"reviews",
@@ -13,7 +13,7 @@ function getAllReviews (productID, container, callBack, options) {
 	var urlString = apiCall["url"];
 	var paramObject = apiCall["params"];
 	var paramString = returnAPIParametersString(apiCall["params"]);
-	$.ajax({
+	$bvsdk.ajax({
 		type: "GET",
 		url: urlString,
 		data: paramString,
@@ -33,7 +33,7 @@ function getAllReviews (productID, container, callBack, options) {
 
 function reviewsAPICall (options) {
 
-	var defaultSettings = $.extend(true, {
+	var defaultSettings = $bvsdk.extend(true, {
 		"URL":{
 			"baseurl":apiBaseURL,
 			"customername":apiDefaults["customerName"],

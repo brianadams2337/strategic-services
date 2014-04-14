@@ -12,6 +12,6 @@ if (typeof bvProperties === "undefined") {
 	window.bvProperties = bvLocaleProperties;
 } else {
 	// if yes, extend object to inherit new local properties
-	bvProperties = $.extend(true, bvProperties, bvLocaleProperties);
+	bvProperties = $bvsdk.extend(true, bvProperties, bvLocaleProperties);
 }
 

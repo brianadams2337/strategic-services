@@ -1,44 +1,12 @@
 
 // version of jquery being used by SDK - if changed, make sure local file is updated for fallbacks
-var jqueryVersion = "1.11.0";
+var jqueryVersion = "1.11.1";
 
 var locationProtocol = location.protocol + "//";
 var locationHostName = location.hostname;
 var locationPort = (location.port) ? ":" + location.port : '';
 var locationPathname = location.pathname;
 var localPathToSDK = ("localPathToSDK" in bvConfigSDK) ? bvConfigSDK["localPathToSDK"] : "bvSDKFramework/";
-
-// check if jquery does not exist or does not match version
-if (typeof jQuery == 'undefined' || !(($.fn.jquery) == jqueryVersion)) {
-	var otherJSLibrary;
-	// check for other js libraries
-	if (typeof $ == 'function') {
-		otherJSLibrary = true;
-	}
-	
-	loadScript('http://ajax.googleapis.com/ajax/libs/jquery/' + jqueryVersion + '/jquery.min.js', function() {
-		if (typeof jQuery=='undefined') {
-			// load local file as fallback if jquery did not load successfully from CDN
-			loadScript(localPathToSDK + "js/jquery.min." + jqueryVersion + ".js", function() {
-				bvLoadSDK();
-			})
-		} else {
-			// jquery script loaded successfully
-			if (!otherJSLibrary) {
-				// no conflicts - init bv
-				bvLoadSDK();
-			} else {
-				// possible conflicts with other library
-				// $.noConflict();
-				bvLoadSDK();
-			}
-		}
-	});
-	
-} else {
-	// jQuery was already loaded
-	bvLoadSDK();
-}
 
 function loadScript(url, callback) {
 	// create script to load
@@ -83,43 +51,43 @@ function loadScript(url, callback) {
 
 function bvLoadSDK () {
 	// load dependant files first
-	$.when(
+	$bvsdk.when(
 		// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
-		$.getScript(localPathToSDK + "js/modernizr.js"),
+		$bvsdk.getScript(localPathToSDK + "js/modernizr.js"),
 		// global variables - must load first for bv content
-		$.getScript(localPathToSDK + "models/varsGlobal.js")
+		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
 	).done(function(){
 		// load models (controllers depend on them)
-		$.when(
+		$bvsdk.when(
 			// properties
-			$.when(
+			$bvsdk.when(
 				// load language defaults first
-				$.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
+				$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
 			).done(function(){
 				// load region specific overrides
 				if (bvConfigSDK["region"]) {
-					$.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
+					$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
 				}		
 			}).fail(function(e){
 				// console.log(e);
 			}),
 			// models
-			$.getScript(siteBaseURL + "models/varsTemplates.js"),
-			$.getScript(siteBaseURL + "models/varsContainers.js"),
-			$.getScript(siteBaseURL + "models/modelsGlobal.js"),
-			$.getScript(siteBaseURL + "models/modelsReviews.js")
+			$bvsdk.getScript(siteBaseURL + "models/varsTemplates.js"),
+			$bvsdk.getScript(siteBaseURL + "models/varsContainers.js"),
+			$bvsdk.getScript(siteBaseURL + "models/modelsGlobal.js"),
+			$bvsdk.getScript(siteBaseURL + "models/modelsReviews.js")
 		).done(function(){
 			// load controllers, plugins, and css files
-			$.when(
+			$bvsdk.when(
 				// controllers
-				$.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
-				$.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
-				$.getScript(siteBaseURL + "controllers/controllersReviews.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersReviews.js"),
 
 				// css files
-				$("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
-				$.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
-					$("body").append(data);
+				$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
+				$bvsdk.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
+					$bvsdk("body").append(data);
 				})
 			).done(function(){
 				// load reviews
@@ -159,3 +127,6 @@ function bvLoadSDK () {
 	});
 }
 
+loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
+	bvLoadSDK();
+})
