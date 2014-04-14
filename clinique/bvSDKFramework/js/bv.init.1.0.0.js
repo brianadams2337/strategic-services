@@ -6,7 +6,7 @@ var locationProtocol = location.protocol + "//";
 var locationHostName = location.hostname;
 var locationPort = (location.port) ? ":" + location.port : '';
 var locationPathname = location.pathname;
-var localPathToSDK = ("localPathToSDK" in bvConfigSDK) ? bvConfigSDK["localPathToSDK"] : "bvSDKFramework/";
+var localPathToSDK = "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/";
 
 function loadScript(url, callback) {
 	// create script to load
@@ -90,7 +90,7 @@ function bvLoadSDK () {
 					$bvsdk("body").append(data);
 				})
 			).done(function(){
-				console.log("testtest5");
+				console.log("testtest6");
 				// load reviews
 				switch (bvConfigSDK["pageType"]) {
 
