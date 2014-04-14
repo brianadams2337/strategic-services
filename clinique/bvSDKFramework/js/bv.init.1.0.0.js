@@ -53,44 +53,43 @@ function bvLoadSDK () {
 	// load dependant files first
 	$bvsdk.when(
 		// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
-		$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "js/modernizr.js"),
+		$bvsdk.getScript(localPathToSDK + "js/modernizr.js"),
 		// global variables - must load first for bv content
-		$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/varsGlobal.js")
+		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
 	).done(function(){
 		// load models (controllers depend on them)
 		$bvsdk.when(
 			// properties
 			$bvsdk.when(
 				// load language defaults first
-				$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
+				$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
 			).done(function(){
 				// load region specific overrides
 				if (bvConfigSDK["region"]) {
-					$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
+					$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
 				}		
 			}).fail(function(e){
 				// console.log(e);
 			}),
 			// models
-			$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/varsTemplates.js"),
-			$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/varsContainers.js"),
-			$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/modelsGlobal.js"),
-			$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/modelsReviews.js")
+			$bvsdk.getScript(siteBaseURL + "models/varsTemplates.js"),
+			$bvsdk.getScript(siteBaseURL + "models/varsContainers.js"),
+			$bvsdk.getScript(siteBaseURL + "models/modelsGlobal.js"),
+			$bvsdk.getScript(siteBaseURL + "models/modelsReviews.js")
 		).done(function(){
 			// load controllers, plugins, and css files
 			$bvsdk.when(
 				// controllers
-				$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "controllers/controllersGlobal.js"),
-				$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "controllers/controllersUGCDisplayUniversal.js"),
-				$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "controllers/controllersReviews.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersReviews.js"),
 
 				// css files
-				$bvsdk("head").append("<link href='" + "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
-				$bvsdk.get("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "views/viewsUniversal.html", function(data) {
+				$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
+				$bvsdk.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
 					$bvsdk("body").append(data);
 				})
 			).done(function(){
-				console.log("testtest7");
 				// load reviews
 				switch (bvConfigSDK["pageType"]) {
 
