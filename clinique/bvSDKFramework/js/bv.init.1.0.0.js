@@ -57,6 +57,7 @@ function bvLoadSDK () {
 		// global variables - must load first for bv content
 		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
 	).done(function(){
+		console.log("lksadfjlasdjf", localPathToSDK, siteBaseURL);
 		// load models (controllers depend on them)
 		$bvsdk.when(
 			// properties
