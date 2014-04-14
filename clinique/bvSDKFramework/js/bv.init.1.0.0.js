@@ -6,7 +6,7 @@ var locationProtocol = location.protocol + "//";
 var locationHostName = location.hostname;
 var locationPort = (location.port) ? ":" + location.port : '';
 var locationPathname = location.pathname;
-var localPathToSDK = "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/";
+var localPathToSDK = ("localPathToSDK" in bvConfigSDK) ? bvConfigSDK["localPathToSDK"] : "bvSDKFramework/";
 
 function loadScript(url, callback) {
 	// create script to load
@@ -57,7 +57,6 @@ function bvLoadSDK () {
 		// global variables - must load first for bv content
 		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
 	).done(function(){
-		console.log("lksadfjlasdjf", localPathToSDK, siteBaseURL);
 		// load models (controllers depend on them)
 		$bvsdk.when(
 			// properties
@@ -128,6 +127,6 @@ function bvLoadSDK () {
 	});
 }
 
-loadScript("https://rawgithub.com/brianadamsdesigns/strategic-services/master/clinique/bvSDKFramework/" + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
+loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
 	bvLoadSDK();
 })
