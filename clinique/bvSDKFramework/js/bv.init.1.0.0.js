@@ -53,9 +53,9 @@ function bvLoadSDK () {
 	// load dependant files first
 	$bvsdk.when(
 		// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
-		$bvsdk.getScript(localPathToSDK + "js/modernizr.js"),
+		$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "js/modernizr.js"),
 		// global variables - must load first for bv content
-		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
+		$bvsdk.getScript("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "models/varsGlobal.js")
 	).done(function(){
 		// load models (controllers depend on them)
 		$bvsdk.when(
@@ -90,7 +90,7 @@ function bvLoadSDK () {
 					$bvsdk("body").append(data);
 				})
 			).done(function(){
-				console.log("testtest");
+				console.log("testtest2");
 				// load reviews
 				switch (bvConfigSDK["pageType"]) {
 
