@@ -85,10 +85,10 @@ function bvLoadSDK () {
 				$bvsdk.getScript(siteBaseURL + "controllers/controllersReviews.js"),
 
 				// css files
-				$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />")
-				// $bvsdk.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
-				// 	$bvsdk("body").append(data);
-				// })
+				$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
+				$bvsdk.get("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "views/viewsUniversal.html", function(data) {
+					$bvsdk("body").append(data);
+				})
 			).done(function(){
 				console.log("testtest");
 				// load reviews
