@@ -127,6 +127,6 @@ function bvLoadSDK () {
 	});
 }
 
-loadScript("https://rawgithub.com/brianadamsdesigns/strategic-services/master/clinique/bvSDKFramework/" + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
+loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
 	bvLoadSDK();
 })
