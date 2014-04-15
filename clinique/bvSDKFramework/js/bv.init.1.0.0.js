@@ -51,43 +51,43 @@ function loadScript(url, callback) {
 
 function bvLoadSDK () {
 	// load dependant files first
-	$bvsdk.when(
+	$.when(
 		// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
-		$bvsdk.getScript(localPathToSDK + "js/modernizr.js"),
+		$.getScript(localPathToSDK + "js/modernizr.js"),
 		// global variables - must load first for bv content
-		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
+		$.getScript(localPathToSDK + "models/varsGlobal.js")
 	).done(function(){
 		// load models (controllers depend on them)
-		$bvsdk.when(
+		$.when(
 			// properties
-			$bvsdk.when(
+			$.when(
 				// load language defaults first
-				$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
+				$.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
 			).done(function(){
 				// load region specific overrides
 				if (bvConfigSDK["region"]) {
-					$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
+					$.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
 				}		
 			}).fail(function(e){
 				// console.log(e);
 			}),
 			// models
-			$bvsdk.getScript(siteBaseURL + "models/varsTemplates.js"),
-			$bvsdk.getScript(siteBaseURL + "models/varsContainers.js"),
-			$bvsdk.getScript(siteBaseURL + "models/modelsGlobal.js"),
-			$bvsdk.getScript(siteBaseURL + "models/modelsReviews.js")
+			$.getScript(siteBaseURL + "models/varsTemplates.js"),
+			$.getScript(siteBaseURL + "models/varsContainers.js"),
+			$.getScript(siteBaseURL + "models/modelsGlobal.js"),
+			$.getScript(siteBaseURL + "models/modelsReviews.js")
 		).done(function(){
 			// load controllers, plugins, and css files
-			$bvsdk.when(
+			$.when(
 				// controllers
-				$bvsdk.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
-				$bvsdk.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
-				$bvsdk.getScript(siteBaseURL + "controllers/controllersReviews.js"),
+				$.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
+				$.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
+				$.getScript(siteBaseURL + "controllers/controllersReviews.js"),
 
 				// css files
-				$bvsdk("head").append("<link href='" + "http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
-				$bvsdk.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
-					$bvsdk("body").append(data);
+				$("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
+				$.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
+					$("body").append(data);
 				})
 			).done(function(){
 				// load reviews
