@@ -1,7 +1,7 @@
 /* UGC DATA */
 
 function loadUGCPullquote (content, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["pullquote"],
 		"viewContainer":bvView["ugc"]["universal"]["pullquote"],
@@ -12,7 +12,7 @@ function loadUGCPullquote (content, options) {
 		"pullquote" : (content['ModeratorHighlights']["MC"]) ? content['ModeratorHighlights']["MC"]["Highlights"][0]["SelectedText"] : content["Title"],
 	};
 	// set container & template
-	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
+	var $container = $bvsdk(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
 	var $template = returnTemplate(bvContent, settings["viewContainer"]);
 	// add template
 	$container.append($template);
@@ -21,7 +21,7 @@ function loadUGCPullquote (content, options) {
 /* USER DATA */
 
 function loadUGCUserNickname (content, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["nickname"],
 		"viewContainer":bvView["ugc"]["universal"]["nickname"],
@@ -31,14 +31,14 @@ function loadUGCUserNickname (content, options) {
 		"nickname" : content["UserNickname"],
 	};
 	// set container & template
-	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
+	var $container = $bvsdk(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
 	var $template = returnTemplate(bvContent, settings["viewContainer"]);
 	// add template
 	$container.append($template);
 }
 
 function loadUGCUserLocation (content, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["location"],
 		"viewContainer":bvView["ugc"]["universal"]["location"],
@@ -48,7 +48,7 @@ function loadUGCUserLocation (content, options) {
 		"location" : content["UserLocation"],
 	};
 	// set container & template
-	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
+	var $container = $bvsdk(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
 	var $template = returnTemplate(bvContent, settings["viewContainer"]);
 	// add template
 	$container.append($template);
@@ -58,7 +58,7 @@ function loadUGCUserLocation (content, options) {
 
 // section headers
 function loadSectionHeader (content, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["header"]["universal"]["section"],
 		"viewContainer":bvView["header"]["universal"]["section"],
@@ -70,7 +70,7 @@ function loadSectionHeader (content, options) {
 		"header-section" : content,
 	};
 	// set container & template
-	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
+	var $container = $bvsdk(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
 	var $template = returnTemplate(bvContent, settings["viewContainer"]);
 	// add widget template
 	$container.append($template);

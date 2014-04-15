@@ -1,13 +1,13 @@
 function returnAPIParametersString (object) {
 	var params = ""
-	$.each (object, function (parameter, parameterValue) {			
+	$bvsdk.each (object, function (parameter, parameterValue) {			
 		if (parameter == "filter") {
-			$.each (this, function (filter, filterValue) {
+			$bvsdk.each (this, function (filter, filterValue) {
 				if (!(filterValue == null || filterValue == undefined || !filterValue)) {
 					if (typeof filterValue === "string") {
 						params += "&filter=" + filter + ":" + filterValue;
 					} else {
-						$.each(filterValue, function(index, value) {
+						$bvsdk.each(filterValue, function(index, value) {
 							params += "&filter=" + filter + ":" + value;
 						});
 					}
@@ -15,7 +15,7 @@ function returnAPIParametersString (object) {
 			});
 		} else if (parameter == "sort") {
 			var i = 1;
-			$.each (this, function (sort, sortValue) {
+			$bvsdk.each (this, function (sort, sortValue) {
 				if (!(sortValue == null || sortValue == undefined || !sortValue)) {
 					if (i == 1) {
 						params += "&sort=" + sort + ":" + sortValue;
@@ -37,10 +37,10 @@ function returnAPIParametersString (object) {
 
 function returnAPIParameters (object) {
 	var params = new Object;
-	$.each (object, function (parameter, parameterValue) {			
+	$bvsdk.each (object, function (parameter, parameterValue) {			
 		if (parameter == "filter") {
 			var filters = new Object;
-			$.each (this, function (filter, filterValue) {
+			$bvsdk.each (this, function (filter, filterValue) {
 				if (!(filterValue == null || filterValue == undefined || !filterValue)) {
 					filters[filter] = filterValue;
 				};
@@ -48,7 +48,7 @@ function returnAPIParameters (object) {
 			params["filter"] = filters;
 		} else if (parameter == "sort") {
 			var sorts = new Object;
-			$.each (this, function (sort, sortValue) {
+			$bvsdk.each (this, function (sort, sortValue) {
 				if (!(sortValue == null || sortValue == undefined || !sortValue)) {
 					sorts[sort] = sortValue;
 				};

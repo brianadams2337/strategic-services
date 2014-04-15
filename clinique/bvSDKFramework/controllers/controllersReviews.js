@@ -21,7 +21,7 @@ function bvInitPullquoteDefault () {
 				// final UGC results to load - concatenated and sliced
 				var ugcToLoad = content["Results"];
 				// check to make sure UGC exist
-				if (ugcToLoad != "" && ugcToLoad != null && ugcToLoad != undefined && !$.isEmptyObject(ugcToLoad)) {
+				if (ugcToLoad != "" && ugcToLoad != null && ugcToLoad != undefined && !$bvsdk.isEmptyObject(ugcToLoad)) {
 					// callback functions
 					loadPullquoteWidget (content, {
 						"parentContainer":"body",
@@ -56,7 +56,7 @@ function bvInitPullquoteDefault () {
 }
 
 function loadPullquoteWidget (content, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"parentContainer":"body", // container ($template) must be defined in call or default is page body
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["container-pullquote-widget"],
 		"viewContainer":bvView["ugc"]["universal"]["container-pullquote-widget"],
@@ -67,13 +67,13 @@ function loadPullquoteWidget (content, options) {
 	var bvContent = {};
 	var ugcToLoad = content["Results"]; // reviews
 	// set container & template
-	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
+	var $container = $bvsdk(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
 	var $template = returnTemplate(bvContent, settings["viewContainer"]);
 	// add widget template
 	$container.html($template);
 
 	// check to make sure reviews exist
-	if (ugcToLoad != "" && ugcToLoad != null && ugcToLoad != undefined && !$.isEmptyObject(ugcToLoad)) {
+	if (ugcToLoad != "" && ugcToLoad != null && ugcToLoad != undefined && !$bvsdk.isEmptyObject(ugcToLoad)) {
 
 		/***** headers *****/
 		loadSectionHeader (bvProperties["header"]["universal"]["section-ugc"], {
@@ -81,7 +81,7 @@ function loadPullquoteWidget (content, options) {
 		});
 
 		// load reviews
-		$.each (ugcToLoad, function(key) {
+		$bvsdk.each (ugcToLoad, function(key) {
 			loadIndividualReview (ugcToLoad[key], {
 				"parentContainer":$template,
 				"productId":settings["productId"],
@@ -89,9 +89,9 @@ function loadPullquoteWidget (content, options) {
 		});
 
 		if (ugcToLoad.length == 1) {
-			$(settings["targetContainer"]).addClass("BVRRSingleReview");
+			$bvsdk(settings["targetContainer"]).addClass("BVRRSingleReview");
 		} else if (ugcToLoad.length == 0) {
-			$(settings["targetContainer"]).addClass("BVRRNoReview");
+			$bvsdk(settings["targetContainer"]).addClass("BVRRNoReview");
 		}
 
 	} else {
@@ -107,7 +107,7 @@ function loadPullquoteWidget (content, options) {
 
 
 function loadIndividualReview (content, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"parentContainer":"", // template must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["universal"]["container-group"],
 		"viewContainer":bvView["ugc"]["universal"]["container-individual"],
@@ -117,14 +117,14 @@ function loadIndividualReview (content, options) {
 	// set content
 	var bvContent = {};
 	// set container & template
-	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
+	var $container = $bvsdk(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
 	var $template = returnTemplate(bvContent, settings["viewContainer"]);
 	// add widget template
 	$container.append($template);
 	// set variables
 	var contentId = content["Id"]
 	var newID = "BVUGCContainer" + contentId;
-	$($template).attr("id",newID);
+	$bvsdk($template).attr("id",newID);
 
 	// load review rating
 	loadReviewRating (content, {
@@ -148,7 +148,7 @@ function loadIndividualReview (content, options) {
 /* REVIEW RATINGS DATA */
 
 function loadReviewRating (content, options) {
-	var settings = $.extend(true, {
+	var settings = $bvsdk.extend(true, {
 		"parentContainer":"", // container ($template) must be defined in call
 		"targetContainer":bvTargetContainer["ugc"]["review"]["rating-overall"],
 		"viewContainer":bvView["ugc"]["review"]["rating-overall"],
@@ -159,7 +159,7 @@ function loadReviewRating (content, options) {
 		"rating-overall-value-range" : content['RatingRange'].toFixed(defaultDecimalOptions["overallRange"]),
 	};
 	// set container & template
-	var $container = $(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
+	var $container = $bvsdk(settings["parentContainer"]).find(settings["targetContainer"]).andSelf().filter(settings["targetContainer"]);
 	var $template = returnTemplate(bvContent, settings["viewContainer"]);
 	// add template
 	$container.append($template);
