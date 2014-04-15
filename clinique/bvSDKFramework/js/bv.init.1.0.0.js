@@ -51,11 +51,11 @@ function loadScript(url, callback) {
 
 function bvLoadSDK () {
 	// load dependant files first
-	$.when(
+	$bvsdk.when(
 		// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
-		$.getScript(localPathToSDK + "js/modernizr.js"),
+		$bvsdk.getScript(localPathToSDK + "js/modernizr.js"),
 		// global variables - must load first for bv content
-		$.getScript(localPathToSDK + "models/varsGlobal.js")
+		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
 	).done(function(){
 		// load models (controllers depend on them)
 		$bvsdk.when(
@@ -86,7 +86,7 @@ function bvLoadSDK () {
 
 				// css files
 				$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
-				$bvsdk.get("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "views/viewsUniversal.html", function(data) {
+				$bvsdk.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
 					$bvsdk("body").append(data);
 				})
 			).done(function(){
