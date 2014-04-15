@@ -86,7 +86,7 @@ function bvLoadSDK () {
 
 				// css files
 				$("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
-				$.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
+				$.get("http://e.clinique.na.us.eng.elcdev.net/sites/clinique/libraries/bvSDKFramework/" + "views/viewsUniversal.html", function(data) {
 					$("body").append(data);
 				})
 			).done(function(){
