@@ -127,6 +127,9 @@ function bvLoadSDK () {
 	});
 }
 
-loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
-	bvLoadSDK();
+loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', function() {
+	console.log('google jquery loaded!!!!!!!!!!!!!!!!!!!!!!!!!!');
 })
+// loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
+// 	bvLoadSDK();
+// })
