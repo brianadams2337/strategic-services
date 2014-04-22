@@ -24,6 +24,7 @@ function getAllReviews (productID, container, callBack, options) {
 		},
 		error: function(e) {
 			defaultAjaxErrorFunction(e);
+			removeLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);
 		},
 		beforeSend: function() {
 			loadLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);

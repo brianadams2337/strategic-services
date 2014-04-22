@@ -85,7 +85,7 @@ function returnFormParamaters (form, options) {
 function returnTemplate (content, template) {
 	// template to process
 	var bvContent = content;
-	var temp = $bvsdk.parseHTML($bvsdk(template).html());
+	var temp = $bvsdk.parseHTML($bvsdk(template).html().trim());
 	// find all images with data image urls
 	$bvsdk(temp).find("img[data-img-url]").andSelf().filter("img[data-img-url]").each(function() {
 		// use Modernizr to check for svg support
@@ -171,12 +171,14 @@ function loadLoadingOverlay (container, template, scroll) {
 }
 
 function removeLoadingOverlay (container, template, scroll) {
+	// set template to remove by getting class
+	var $template = '.' + returnTemplate(null, template)[0].className;
 	// animate height of loading container to fit content
 	$bvsdk(container).animate({"height":$bvsdk(container).prop("scrollHeight")}, defaultAnimationSpeed, function() {
 		// callback to remove inline height style from loading container in case a child element changes size
 		$bvsdk(container).css({"height":""});
 	});
 	// remove overlay template from loading container
-	$bvsdk(container).find(template).andSelf().filter(template).remove();
+	$bvsdk(container).find($template).andSelf().filter($template).remove();
 }
 
