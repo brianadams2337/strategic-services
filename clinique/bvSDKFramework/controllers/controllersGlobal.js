@@ -85,7 +85,7 @@ function returnFormParamaters (form, options) {
 function returnTemplate (content, template) {
 	// template to process
 	var bvContent = content;
-	var temp = $bvsdk.parseHTML($bvsdk(template).html().trim());
+	var temp = $bvsdk.parseHTML($bvsdk(template).html().replace(/^\s+|\s+$/g, ''));
 	// find all images with data image urls
 	$bvsdk(temp).find("img[data-img-url]").andSelf().filter("img[data-img-url]").each(function() {
 		// use Modernizr to check for svg support
