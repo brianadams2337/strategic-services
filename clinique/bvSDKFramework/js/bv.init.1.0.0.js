@@ -127,6 +127,23 @@ function bvLoadSDK () {
 	// });
 }
 
-// loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
-// 	bvLoadSDK();
-// })
+loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
+	// if (typeof jQuery=='undefined') {
+	// 	// load local file as fallback if jquery did not load successfully from CDN
+	// 	loadScript(locationProtocol + locationHostName + locationPort + localPathToSDK + "js/jquery.min." + jqueryVersion + ".js", function() {
+	// 		bvLoadSDK();
+	// 	})
+	// } else {
+	// 	// jquery script loaded successfully
+	// 	if (!otherJSLibrary) {
+	// 		// no conflicts - init bv
+	// 		bvLoadSDK();
+	// 	} else {
+	// 		// possible conflicts with other library
+	// 		$bvsdk.noConflict();
+	// 		bvLoadSDK();
+	// 	}
+	// }
+	$bvsdk.noConflict();
+	bvLoadSDK();
+})
