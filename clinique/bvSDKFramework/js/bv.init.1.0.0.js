@@ -91,29 +91,29 @@ function bvLoadSDK () {
 				})
 			).done(function(){
 				// load reviews
-				switch (bvConfigSDK["pageType"]) {
+				// switch (bvConfigSDK["pageType"]) {
 
-					case "Product":
-						// Product Page specific code
-						bvInitPullquoteDefault();
-						break;
+				// 	case "Product":
+				// 		// Product Page specific code
+				// 		bvInitPullquoteDefault();
+				// 		break;
 					
-					case "Category":
-						// Category Page specific code
-						bvInitPullquoteDefault();
-						break;
+				// 	case "Category":
+				// 		// Category Page specific code
+				// 		bvInitPullquoteDefault();
+				// 		break;
 					
-					case "Misc":
-						// Misc Page specific code (home page, etc)
-						bvInitPullquoteDefault();
-						break;
+				// 	case "Misc":
+				// 		// Misc Page specific code (home page, etc)
+				// 		bvInitPullquoteDefault();
+				// 		break;
 
-					default:
-						// Default code
-						bvInitPullquoteDefault();
-						break;
+				// 	default:
+				// 		// Default code
+				// 		bvInitPullquoteDefault();
+				// 		break;
 
-					}
+				// 	}
 
 			}).fail(function(e){
 				// console.log(e);
