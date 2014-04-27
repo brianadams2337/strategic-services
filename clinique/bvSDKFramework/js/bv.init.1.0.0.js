@@ -144,6 +144,7 @@ loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", func
 	// 		bvLoadSDK();
 	// 	}
 	// }
+	console.log('noConflict');
 	$bvsdk.noConflict();
 	bvLoadSDK();
 })
