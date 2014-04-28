@@ -51,100 +51,82 @@ function loadScript(url, callback) {
 
 function bvLoadSDK () {
 	// load dependant files first
-	// $bvsdk.when(
-	// 	// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
-	// 	$bvsdk.getScript(localPathToSDK + "js/modernizr.js"),
-	// 	// global variables - must load first for bv content
-	// 	$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
-	// ).done(function(){
-	// 	// load models (controllers depend on them)
-	// 	$bvsdk.when(
-	// 		// properties
-	// 		$bvsdk.when(
-	// 			// load language defaults first
-	// 			$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
-	// 		).done(function(){
-	// 			// load region specific overrides
-	// 			if (bvConfigSDK["region"]) {
-	// 				$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
-	// 			}		
-	// 		}).fail(function(e){
-	// 			// console.log(e);
-	// 		}),
-	// 		// models
-	// 		$bvsdk.getScript(siteBaseURL + "models/varsTemplates.js"),
-	// 		$bvsdk.getScript(siteBaseURL + "models/varsContainers.js"),
-	// 		$bvsdk.getScript(siteBaseURL + "models/modelsGlobal.js"),
-	// 		$bvsdk.getScript(siteBaseURL + "models/modelsReviews.js")
-	// 	).done(function(){
-	// 		// load controllers, plugins, and css files
-	// 		$bvsdk.when(
-	// 			// controllers
-	// 			$bvsdk.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
-	// 			$bvsdk.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
-	// 			$bvsdk.getScript(siteBaseURL + "controllers/controllersReviews.js"),
+	$bvsdk.when(
+		// modernizr - must load for HTML 5 browser support (includes HTML5 shiv)
+		$bvsdk.getScript(localPathToSDK + "js/modernizr.js"),
+		// global variables - must load first for bv content
+		$bvsdk.getScript(localPathToSDK + "models/varsGlobal.js")
+	).done(function(){
+		// load models (controllers depend on them)
+		$bvsdk.when(
+			// properties
+			$bvsdk.when(
+				// load language defaults first
+				$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/properties.js")
+			).done(function(){
+				// load region specific overrides
+				if (bvConfigSDK["region"]) {
+					$bvsdk.getScript(siteBaseURL + "models/properties/" + (bvConfigSDK["language"] || "en") + "/" + bvConfigSDK["region"] + "/properties.js")
+				}		
+			}).fail(function(e){
+				// console.log(e);
+			}),
+			// models
+			$bvsdk.getScript(siteBaseURL + "models/varsTemplates.js"),
+			$bvsdk.getScript(siteBaseURL + "models/varsContainers.js"),
+			$bvsdk.getScript(siteBaseURL + "models/modelsGlobal.js"),
+			$bvsdk.getScript(siteBaseURL + "models/modelsReviews.js")
+		).done(function(){
+			// load controllers, plugins, and css files
+			$bvsdk.when(
+				// controllers
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersGlobal.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersUGCDisplayUniversal.js"),
+				$bvsdk.getScript(siteBaseURL + "controllers/controllersReviews.js"),
 
-	// 			// css files
-	// 			$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
-	// 			$bvsdk.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
-	// 				$bvsdk("body").append(data);
-	// 			})
-	// 		).done(function(){
-	// 			// load reviews
-	// 			switch (bvConfigSDK["pageType"]) {
+				// css files
+				$bvsdk("head").append("<link href='" + siteBaseURL + "css/bazaarvoiceUniversal.css' type='text/css' rel='stylesheet' />"),
+				$bvsdk.get(siteBaseURL + "views/viewsUniversal.html", function(data) {
+					$bvsdk("body").append(data);
+				})
+			).done(function(){
+				// load reviews
+				switch (bvConfigSDK["pageType"]) {
 
-	// 				case "Product":
-	// 					// Product Page specific code
-	// 					bvInitPullquoteDefault();
-	// 					break;
+					case "Product":
+						// Product Page specific code
+						bvInitPullquoteDefault();
+						break;
 					
-	// 				case "Category":
-	// 					// Category Page specific code
-	// 					bvInitPullquoteDefault();
-	// 					break;
+					case "Category":
+						// Category Page specific code
+						bvInitPullquoteDefault();
+						break;
 					
-	// 				case "Misc":
-	// 					// Misc Page specific code (home page, etc)
-	// 					bvInitPullquoteDefault();
-	// 					break;
+					case "Misc":
+						// Misc Page specific code (home page, etc)
+						bvInitPullquoteDefault();
+						break;
 
-	// 				default:
-	// 					// Default code
-	// 					bvInitPullquoteDefault();
-	// 					break;
+					default:
+						// Default code
+						bvInitPullquoteDefault();
+						break;
 
-	// 				}
+					}
 
-	// 		}).fail(function(e){
-	// 			// console.log(e);
-	// 		});
+			}).fail(function(e){
+				// console.log(e);
+			});
 
-	// 	}).fail(function(e){
-	// 		// console.log(e);
-	// 	});
-	// }).fail(function(e){
-	// 	// console.log(e);
-	// });
+		}).fail(function(e){
+			// console.log(e);
+		});
+	}).fail(function(e){
+		// console.log(e);
+	});
 }
 
 loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
-	// if (typeof jQuery=='undefined') {
-	// 	// load local file as fallback if jquery did not load successfully from CDN
-	// 	loadScript(locationProtocol + locationHostName + locationPort + localPathToSDK + "js/jquery.min." + jqueryVersion + ".js", function() {
-	// 		bvLoadSDK();
-	// 	})
-	// } else {
-	// 	// jquery script loaded successfully
-	// 	if (!otherJSLibrary) {
-	// 		// no conflicts - init bv
-	// 		bvLoadSDK();
-	// 	} else {
-	// 		// possible conflicts with other library
-	// 		$bvsdk.noConflict();
-	// 		bvLoadSDK();
-	// 	}
-	// }
-	console.log('noConflict true');
-	$bvsdk.noConflict(true);
 	bvLoadSDK();
 })
