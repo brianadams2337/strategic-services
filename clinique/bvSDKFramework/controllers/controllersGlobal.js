@@ -161,7 +161,7 @@ function loadLoadingOverlay (container, template, scroll) {
 	// add widget template
 	$bvsdk($template).appendTo(container);
 	// set loading container height - this needs to be done to animate height once content is loaded
-	$bvsdk(container).css({"height":$bvsdk(container).prop("scrollHeight")});
+	$bvsdk(container).css({"height":$bvsdk(container).height()});
 	// scroll to top of loading container
 	if (scroll) {
 		$bvsdk('html, body').animate({

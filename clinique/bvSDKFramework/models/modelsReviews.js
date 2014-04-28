@@ -19,8 +19,8 @@ function getAllReviews (productID, container, callBack, options) {
 		data: paramString,
 		dataType: "jsonp",
 		success: function(data) {
-			// callBack(data, paramObject);
-			// removeLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);
+			callBack(data, paramObject);
+			removeLoadingOverlay (container, bvView["overlay"]["universal"]["default"], false);
 		},
 		error: function(e) {
 			defaultAjaxErrorFunction(e);
