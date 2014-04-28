@@ -127,5 +127,7 @@ function bvLoadSDK () {
 	});
 }
 
+loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
 	window.$bvsdk = jQuery.noConflict(true);
 	bvLoadSDK();
+})
