@@ -160,8 +160,6 @@ function loadLoadingOverlay (container, template, scroll) {
 	var $template = returnTemplate(bvContent, template);
 	// add widget template
 	$bvsdk($template).appendTo(container);
-	// set loading container height - this needs to be done to animate height once content is loaded
-	$bvsdk(container).css({"height":$bvsdk(container).height()});
 	// scroll to top of loading container
 	if (scroll) {
 		$bvsdk('html, body').animate({
@@ -173,11 +171,6 @@ function loadLoadingOverlay (container, template, scroll) {
 function removeLoadingOverlay (container, template, scroll) {
 	// set template to remove by getting class
 	var $template = '.' + returnTemplate(null, template)[0].className;
-	// animate height of loading container to fit content
-	$bvsdk(container).animate({"height":$bvsdk(container).prop("scrollHeight")}, defaultAnimationSpeed, function() {
-		// callback to remove inline height style from loading container in case a child element changes size
-		$bvsdk(container).css({"height":""});
-	});
 	// remove overlay template from loading container
 	$bvsdk(container).find($template).andSelf().filter($template).remove();
 }
