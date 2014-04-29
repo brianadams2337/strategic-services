@@ -128,6 +128,6 @@ function bvLoadSDK () {
 }
 
 loadScript(localPathToSDK + "js/jquery.bvsdk.min." + jqueryVersion + ".js", function() {
-	window.$bvsdk = jQuery.noConflict(true);
+	console.log('bvsdk', $bvsdk.fn.jquery, '$', $.fn.jquery, 'jquery', jQuery.fn.jquery)
 	bvLoadSDK();
 })
