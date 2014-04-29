@@ -5,7 +5,7 @@
 /* CONTAINER STYLES */
 
 	#BVRRPullquoteHighlightContainer {clear: both; max-width: 1008px; margin: 0 auto;}
-	.BVPullquoteWidgetContainer {border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB; padding: 18px 0;}
+	.BVPullquoteWidgetContainer {border-bottom: 1px solid #DBDBDB; padding: 0 0 30px 0;}
 		.BVPullquoteWidgetContainer .BVUGCBodyContainer {background: url(../images/backgroundPullquoteDivider.gif) repeat-y center center;}
 	.BVRRSingleReview .BVPullquoteWidgetContainer .BVUGCBodyContainer {background: none; text-align: center;}
 
